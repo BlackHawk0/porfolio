@@ -17,17 +17,46 @@ code {
     monospace;
 }
 
-
-a {
-  font-size: 22px;
-  color: #4d4d4e;
-  display: block;
-  line-height: 51px;
-  height: 51px;
-  position: relative;
-  text-decoration: none;
+.active {
+	 font-size: 22px;
+	 color: #ffd700;
+	 display: block;
+	 line-height: 51px;
+	 height: 51px;
+	 position: relative;
 }
-i {
-  transition: all 0.3s ease-out;
+.active i {
+	 transition: all 0.3s ease-out;
 }
-
+.active:hover{
+  color: #ffd700;
+}
+.active:hover svg{
+  opacity: 0;
+}
+.active:hover:after{
+  opacity: 1;
+}
+.active:after {
+	 content: '';
+	 font-size: 9px;
+	 letter-spacing: 2px;
+	 position: absolute;
+	 bottom: 0;
+	 display: block;
+	 width: 100%;
+	 text-align: center;
+	 opacity: 0;
+	 -webkit-transition: all 0.3s ease-out;
+	 transition: all 0.3s ease-out;
+}
+.active:first-child:after {
+  
+	 content: 'HOME';
+}
+.active:nth-child(2):after {
+	 content: 'ABOUT';
+}
+.active:last-child:after {
+	 content: 'CONTACT';
+}
